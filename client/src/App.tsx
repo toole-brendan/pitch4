@@ -7,6 +7,7 @@ import NotFound from "@/pages/not-found";
 // 1. Company Purpose
 import CompanyOverview from "@/components/slides/1-company/CompanyOverview";
 import FounderVision from "@/components/slides/1-company/FounderVision";
+import FounderBackground from "@/components/slides/1-company/FounderBackground";
 
 // 2. Current Problem
 import SupplyChainChallenges from "@/components/slides/2-problem/SupplyChainChallenges";
@@ -25,26 +26,22 @@ import MarketOpportunity from "@/components/slides/5-market/MarketOpportunity";
 import CompetitiveLandscape from "@/components/slides/6-competition/CompetitiveLandscape";
 
 // 7. Product in more detail
-import DefenseApplication from "@/components/slides/7-product/DefenseApplication";
-import CommercialApplication from "@/components/slides/7-product/CommercialApplication";
-import DefenseUserExperience from "@/components/slides/7-product/DefenseUserExperience";
-import CommercialSolution from "@/components/slides/7-product/CommercialSolution";
-import CommercialUserExperience from "@/components/slides/7-product/CommercialUserExperience";
-import TokenEconomics from "@/components/slides/7-product/TokenEconomics";
-import ShellTokenArchitecture from "@/components/slides/7-product/ShellTokenArchitecture";
+import ProductFeatures from "@/components/slides/7-product/ProductFeatures";
+import UserExperience from "@/components/slides/7-product/UserExperience";
 
 // 8. Business Model
-import EarlyTraction from "@/components/slides/8-business/EarlyTraction";
 import BusinessModel from "@/components/slides/8-business/BusinessModel";
 import GoToMarketStrategy from "@/components/slides/8-business/GoToMarketStrategy";
+import OperationalCosts from "@/components/slides/8-business/OperationalCosts";
 
 // 9. Financials
 import FinancialProjections from "@/components/slides/9-financials/FinancialProjections";
-import DevelopmentProgress from "@/components/slides/9-financials/DevelopmentProgress";
-import Roadmap from "@/components/slides/9-financials/Roadmap";
+import FundingRequest from "@/components/slides/9-financials/FundingRequest";
+import TeamAndRoadmap from "@/components/slides/9-financials/TeamAndRoadmap";
 
-// 10. Closing
-import CallToAction from "@/components/slides/10-closing/CallToAction";
+// Appendix
+import TokenEconomics from "@/components/slides/appendix/TokenEconomics";
+import ShellTokenArchitecture from "@/components/slides/appendix/ShellTokenArchitecture";
 
 // Navigation
 import Navigation from "@/components/Navigation";
@@ -57,6 +54,7 @@ function Router() {
         {/* 1. Company Purpose */}
         <Route path="/" component={CompanyOverview} />
         <Route path="/founder-vision" component={FounderVision} />
+        <Route path="/founder-background" component={FounderBackground} />
         
         {/* 2. Current Problem */}
         <Route path="/supply-chain-challenges" component={SupplyChainChallenges} />
@@ -75,26 +73,22 @@ function Router() {
         <Route path="/competitive-landscape" component={CompetitiveLandscape} />
         
         {/* 7. Product in more detail */}
-        <Route path="/defense-application" component={DefenseApplication} />
-        <Route path="/commercial-application" component={CommercialApplication} />
-        <Route path="/defense-user-experience" component={DefenseUserExperience} />
-        <Route path="/commercial-solution-showcase" component={CommercialSolution} />
-        <Route path="/commercial-user-experience" component={CommercialUserExperience} />
-        <Route path="/token-economics" component={TokenEconomics} />
-        <Route path="/shell-token-architecture" component={ShellTokenArchitecture} />
+        <Route path="/product-features" component={ProductFeatures} />
+        <Route path="/user-experience" component={UserExperience} />
         
         {/* 8. Business Model */}
-        <Route path="/early-traction" component={EarlyTraction} />
         <Route path="/business-model" component={BusinessModel} />
         <Route path="/go-to-market-strategy" component={GoToMarketStrategy} />
+        <Route path="/operational-costs" component={OperationalCosts} />
         
         {/* 9. Financials */}
         <Route path="/financial-projections" component={FinancialProjections} />
-        <Route path="/development-progress" component={DevelopmentProgress} />
-        <Route path="/roadmap" component={Roadmap} />
+        <Route path="/funding-request" component={FundingRequest} />
+        <Route path="/team-and-roadmap" component={TeamAndRoadmap} />
         
-        {/* 10. Closing */}
-        <Route path="/call-to-action" component={CallToAction} />
+        {/* Appendix */}
+        <Route path="/token-economics" component={TokenEconomics} />
+        <Route path="/shell-token-architecture" component={ShellTokenArchitecture} />
         
         <Route component={NotFound} />
       </Switch>

@@ -1,20 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
-import { cn } from "@/lib/utils";
-import { 
-  DollarSign, 
-  Users, 
-  Lock, 
-  ArrowUp, 
-  ArrowRightLeft,
-  PieChart,
-  BarChart,
-  Percent,
-  Flame,
-  Shield,
-  Briefcase
-} from 'lucide-react';
+import { DollarSign, TrendingUp, Users, Target, BarChart, PieChart } from 'lucide-react';
 
 // Motion variants
 const containerVariants = {
@@ -52,60 +39,57 @@ const barVariants = {
 };
 
 const FinancialProjections: React.FC = () => {
+  // Financial projections data - realistic seed stage projections
   const financialData = [
     { 
       year: 'Year 1', 
-      revenue: '175K', 
-      customers: '2-3', 
+      revenue: '0', 
+      customers: '0', 
       expenses: '1.2M', 
-      cashflow: '-1.0M',
-      tokenStaking: '10K'
+      cashflow: '-1.2M'
     },
     { 
       year: 'Year 2', 
-      revenue: '1.2M', 
-      customers: '5-8', 
-      expenses: '1.9M', 
-      cashflow: '-700K',
-      tokenStaking: '50K'
+      revenue: '500K', 
+      customers: '3-5', 
+      expenses: '1.8M', 
+      cashflow: '-1.3M'
     },
     { 
       year: 'Year 3', 
-      revenue: '4.2M', 
-      customers: '15-20', 
-      expenses: '3.2M', 
-      cashflow: '1.0M',
-      tokenStaking: '100K'
+      revenue: '2.5M', 
+      customers: '8-12', 
+      expenses: '3.0M', 
+      cashflow: '-500K'
     },
     { 
       year: 'Year 4', 
-      revenue: '9.6M', 
-      customers: '28-35', 
-      expenses: '6.5M', 
-      cashflow: '3.1M',
-      tokenStaking: '500K'
+      revenue: '7.5M', 
+      customers: '15-20', 
+      expenses: '5.0M', 
+      cashflow: '2.5M'
     },
     { 
       year: 'Year 5', 
-      revenue: '18.5M', 
-      customers: '45-55', 
-      expenses: '12.0M', 
-      cashflow: '6.5M',
-      tokenStaking: '1M'
+      revenue: '18M', 
+      customers: '30-40', 
+      expenses: '10M', 
+      cashflow: '8M'
     }
   ];
 
+  // Fund allocation data - how seed money will be used
   const fundAllocation = [
-    { name: 'Engineering & Product', percent: 55, amount: '1.21M' },
-    { name: 'Sales & Marketing', percent: 25, amount: '550K' },
-    { name: 'Operations', percent: 15, amount: '330K' },
-    { name: 'Legal & Compliance', percent: 5, amount: '110K' }
+    { name: 'Product Development', percent: 55, amount: '412.5K' },
+    { name: 'Sales & Marketing', percent: 15, amount: '112.5K' },
+    { name: 'Operations', percent: 20, amount: '150K' },
+    { name: 'Legal & Compliance', percent: 10, amount: '75K' }
   ];
 
   return (
     <Slide 
       title="Financial Projections" 
-      subtitle="Five-year forecast with token economy integration"
+      subtitle="5-year forecast and seed funding allocation"
     >
       <motion.div
         variants={containerVariants}
@@ -113,7 +97,7 @@ const FinancialProjections: React.FC = () => {
         animate="visible"
         className="space-y-6"
       >
-        {/* Financial Overview Section */}
+        {/* Financial Projections Table */}
         <div className="bg-white shadow-sm rounded-sm p-6 relative">
           <div className="absolute -top-3 left-10">
             <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
@@ -163,20 +147,7 @@ const FinancialProjections: React.FC = () => {
                 <tr className="hover:bg-gray-50">
                   <td className="p-2 text-xs font-medium text-gray-500 whitespace-nowrap">
                     <div className="flex items-center">
-                      <Lock className="w-4 h-4 text-violet-600 mr-2" />
-                      Token Staking
-                    </div>
-                  </td>
-                  {financialData.map((data, index) => (
-                    <td key={index} className="p-2 text-center text-violet-600 font-semibold">
-                      {data.tokenStaking} SHL
-                    </td>
-                  ))}
-                </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="p-2 text-xs font-medium text-gray-500 whitespace-nowrap">
-                    <div className="flex items-center">
-                      <ArrowUp className="w-4 h-4 text-violet-600 mr-2" />
+                      <TrendingUp className="w-4 h-4 text-violet-600 mr-2" />
                       Expenses
                     </div>
                   </td>
@@ -189,16 +160,13 @@ const FinancialProjections: React.FC = () => {
                 <tr className="hover:bg-gray-50">
                   <td className="p-2 text-xs font-medium text-gray-500 whitespace-nowrap">
                     <div className="flex items-center">
-                      <ArrowRightLeft className="w-4 h-4 text-violet-600 mr-2" />
+                      <BarChart className="w-4 h-4 text-violet-600 mr-2" />
                       Net Cash Flow
                     </div>
                   </td>
                   {financialData.map((data, index) => (
                     <td key={index} className="p-2 text-center">
-                      <span className={cn(
-                        "font-semibold",
-                        data.cashflow.includes('-') ? "text-red-600" : "text-green-600"
-                      )}>
+                      <span className={data.cashflow.includes('-') ? "font-semibold text-red-600" : "font-semibold text-green-600"}>
                         ${data.cashflow}
                       </span>
                     </td>
@@ -209,110 +177,96 @@ const FinancialProjections: React.FC = () => {
           </div>
         </div>
 
-        {/* Key Metrics and Token Economics */}
+        {/* Key Metrics and Fund Allocation */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Token Economics */}
+          {/* Key Business Metrics */}
           <div className="bg-white shadow-sm rounded-sm p-6 relative">
             <div className="absolute -top-3 left-10">
               <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
-                TOKEN ECONOMICS
+                KEY BUSINESS METRICS
               </span>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-4">
               <motion.div variants={itemVariants} className="bg-gray-50 rounded-sm p-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <Percent className="w-4 h-4 text-violet-600" />
-                  <p className="text-xs font-medium text-gray-700">Transaction Fee</p>
+                  <Target className="w-4 h-4 text-violet-600" />
+                  <p className="text-xs font-medium text-gray-700">Customer Acquisition Cost</p>
                 </div>
-                <p className="text-xl font-semibold text-violet-600">0.1%</p>
-                <p className="text-xs text-gray-600 mt-1">Per transaction value</p>
-              </motion.div>
-
-              <motion.div variants={itemVariants} className="bg-gray-50 rounded-sm p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <Flame className="w-4 h-4 text-violet-600" />
-                  <p className="text-xs font-medium text-gray-700">Fee Burn Rate</p>
-                </div>
-                <p className="text-xl font-semibold text-violet-600">40%</p>
-                <p className="text-xs text-gray-600 mt-1">Of transaction fees</p>
-              </motion.div>
-
-              <motion.div variants={itemVariants} className="bg-gray-50 rounded-sm p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <Shield className="w-4 h-4 text-violet-600" />
-                  <p className="text-xs font-medium text-gray-700">Validator Share</p>
-                </div>
-                <p className="text-xl font-semibold text-violet-600">30%</p>
-                <p className="text-xs text-gray-600 mt-1">Of transaction fees</p>
+                <p className="text-xl font-semibold text-violet-600">$30-65K</p>
+                <p className="text-xs text-gray-600 mt-1">Per enterprise client</p>
               </motion.div>
 
               <motion.div variants={itemVariants} className="bg-gray-50 rounded-sm p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <PieChart className="w-4 h-4 text-violet-600" />
-                  <p className="text-xs font-medium text-gray-700">Development Fund</p>
+                  <p className="text-xs font-medium text-gray-700">Gross Margin</p>
                 </div>
-                <p className="text-xl font-semibold text-violet-600">30%</p>
-                <p className="text-xs text-gray-600 mt-1">Of transaction fees</p>
+                <p className="text-xl font-semibold text-violet-600">80-85%</p>
+                <p className="text-xs text-gray-600 mt-1">Software revenue</p>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="bg-gray-50 rounded-sm p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <Users className="w-4 h-4 text-violet-600" />
+                  <p className="text-xs font-medium text-gray-700">Customer LTV</p>
+                </div>
+                <p className="text-xl font-semibold text-violet-600">$400K+</p>
+                <p className="text-xs text-gray-600 mt-1">5-year value</p>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="bg-gray-50 rounded-sm p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <TrendingUp className="w-4 h-4 text-violet-600" />
+                  <p className="text-xs font-medium text-gray-700">Breakeven Point</p>
+                </div>
+                <p className="text-xl font-semibold text-violet-600">Year 4</p>
+                <p className="text-xs text-gray-600 mt-1">Cash flow positive</p>
               </motion.div>
             </div>
           </div>
 
-          {/* Staking Requirements */}
+          {/* Fund Allocation */}
           <div className="bg-white shadow-sm rounded-sm p-6 relative">
             <div className="absolute -top-3 left-10">
               <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
-                STAKING REQUIREMENTS
+                SEED FUNDING ALLOCATION
               </span>
             </div>
 
-            <div className="mt-6 space-y-4">
-              {[
-                { name: 'Suppliers', percent: 25, amount: '10,000 SHL', icon: <Briefcase size={16} /> },
-                { name: 'Retailers', percent: 50, amount: '50,000 SHL', icon: <BarChart size={16} /> },
-                { name: 'Financial Institutions', percent: 100, amount: '100,000 SHL', icon: <DollarSign size={16} /> }
-              ].map((item, index) => (
-                <div key={index} className="space-y-2">
+            <div className="mt-6 space-y-5">
+              <p className="text-sm text-gray-600 mb-4">
+                How we'll use the $750K seed investment:
+              </p>
+            
+              {fundAllocation.map((fund, index) => (
+                <motion.div 
+                  key={index} 
+                  variants={itemVariants}
+                  className="space-y-1"
+                >
                   <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-2">
-                      <div className="text-violet-600">{item.icon}</div>
-                      <span className="text-sm font-medium text-gray-700">{item.name}</span>
-                    </div>
-                    <span className="text-sm font-semibold text-violet-600">{item.amount}</span>
+                    <span className="text-sm font-medium text-gray-700">{fund.name}</span>
+                    <span className="text-sm font-medium text-violet-600">{fund.percent}% (${fund.amount})</span>
                   </div>
                   <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                     <motion.div
                       variants={barVariants}
                       className="h-full bg-violet-500 rounded-full"
-                      style={{ width: `${item.percent}%` }}
+                      style={{ width: `${fund.percent}%` }}
                     />
                   </div>
-                </div>
+                </motion.div>
               ))}
+              
+              <div className="bg-gray-50 p-4 rounded-sm mt-6">
+                <p className="text-sm font-medium text-gray-700 mb-2">Expected Runway</p>
+                <p className="text-lg font-medium text-violet-600">12-18 months</p>
+                <p className="text-xs text-gray-600 mt-1">
+                  Sufficient time to develop MVP, demonstrate core technology, and validate with potential customers
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-
-        {/* Fund Allocation */}
-        <div className="bg-white shadow-sm rounded-sm p-6 relative">
-          <div className="absolute -top-3 left-10">
-            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
-              FUND ALLOCATION
-            </span>
-          </div>
-
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
-            {fundAllocation.map((fund, index) => (
-              <motion.div 
-                key={index} 
-                variants={itemVariants}
-                className="bg-gray-50 p-4 rounded-sm text-center"
-              >
-                <p className="text-lg font-semibold text-violet-600">{fund.percent}%</p>
-                <p className="text-xs font-medium text-gray-700 mb-1">{fund.name}</p>
-                <p className="text-sm text-gray-600">${fund.amount}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </motion.div>

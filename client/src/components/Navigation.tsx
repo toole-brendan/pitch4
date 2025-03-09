@@ -9,6 +9,7 @@ const Navigation = () => {
     // 1. Company Purpose
     { path: "/", name: "COMPANY OVERVIEW" },
     { path: "/founder-vision", name: "FOUNDER & VISION" },
+    { path: "/founder-background", name: "FOUNDER BACKGROUND" },
     
     // 2. Current Problem
     { path: "/supply-chain-challenges", name: "SUPPLY CHAIN CHALLENGES" },
@@ -27,26 +28,22 @@ const Navigation = () => {
     { path: "/competitive-landscape", name: "COMPETITIVE LANDSCAPE" },
     
     // 7. Product in more detail
-    { path: "/defense-application", name: "DEFENSE APPLICATION" },
-    { path: "/commercial-application", name: "COMMERCIAL APPLICATION" },
-    { path: "/defense-user-experience", name: "DEFENSE USER EXPERIENCE" },
-    { path: "/commercial-solution-showcase", name: "COMMERCIAL SOLUTION SHOWCASE" },
-    { path: "/commercial-user-experience", name: "COMMERCIAL USER EXPERIENCE" },
-    { path: "/token-economics", name: "TOKEN ECONOMICS" },
-    { path: "/shell-token-architecture", name: "SHELL TOKEN ARCHITECTURE" },
+    { path: "/product-features", name: "PRODUCT FEATURES" },
+    { path: "/user-experience", name: "USER EXPERIENCE" },
     
     // 8. Business Model
-    { path: "/early-traction", name: "EARLY TRACTION" },
     { path: "/business-model", name: "BUSINESS MODEL" },
     { path: "/go-to-market-strategy", name: "GO TO MARKET STRATEGY" },
+    { path: "/operational-costs", name: "OPERATIONAL COSTS" },
     
     // 9. Financials
     { path: "/financial-projections", name: "FINANCIAL PROJECTIONS" },
-    { path: "/development-progress", name: "DEVELOPMENT PROGRESS" },
-    { path: "/roadmap", name: "ROADMAP" },
+    { path: "/funding-request", name: "FUNDING REQUEST" },
+    { path: "/team-and-roadmap", name: "TEAM & ROADMAP" },
     
-    // 10. Closing
-    { path: "/call-to-action", name: "CALL TO ACTION" }
+    // Appendix
+    { path: "/token-economics", name: "TOKEN ECONOMICS (APPENDIX)" },
+    { path: "/shell-token-architecture", name: "SHELL TOKEN ARCHITECTURE (APPENDIX)" }
   ];
 
   // Find current index

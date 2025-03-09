@@ -237,4 +237,49 @@ Shell is a supply chain-oriented cryptocurrency designed to dramatically reduce 
 2. **Delegated Proof of Supply Chain Consensus**: Tailored consensus for trade operations
 3. **Conditional Payment Channels**: For efficient recurring business transactions
 4. **Cross-Chain Verification Protocol**: For secure HandReceipt integration
-5. **Business Logic Extensions**: Domain-specific operations built into the protocol level 
+5. **Business Logic Extensions**: Domain-specific operations built into the protocol level
+
+## Project Directory Structure
+```
+shell-cryptocurrency/
+│
+├── Cargo.toml # Project dependencies and metadata
+├── Cargo.lock # Lock file for deterministic builds
+│
+├── docs/ # Documentation
+│ ├── architecture.md # This document
+│ ├── consensus.md # Consensus mechanism details
+│ ├── smart_contracts.md # Smart contract documentation
+│ └── api.md # API documentation
+│
+├── src/ # Source code directory
+│ ├── lib.rs # Library entrypoint and exports
+│ ├── block.rs # Block and transaction structures
+│ ├── blockchain.rs # Blockchain implementation
+│ ├── consensus.rs # Consensus algorithm implementation
+│ ├── genesis.rs # Genesis block creation utilities
+│ ├── utxo.rs # UTXO tracking system
+│ ├── wallet.rs # Wallet implementation
+│ ├── smart_contract/ # Smart contract subsystem
+│ │ ├── mod.rs # Smart contract module exports
+│ │ ├── vm.rs # Virtual machine implementation
+│ │ ├── compiler.rs # Contract language compiler
+│ │ ├── opcodes.rs # VM opcodes and execution logic
+│ │ └── templates.rs # Pre-built contract templates
+│ │
+│ ├── network/ # Networking subsystem
+│ ├── storage/ # Data persistence
+│ ├── crypto/ # Cryptographic utilities
+│ └── api/ # API interfaces
+│
+├── examples/ # Example code and usage demonstrations
+├── tests/ # Integration tests
+├── benches/ # Performance benchmarks
+└── tools/ # Utility tools and scripts
+```
+
+## Conclusion
+
+Shell cryptocurrency is designed as a purpose-built solution for global trade and supply chain management, focusing on the specific needs of importers and exporters while ensuring security, scalability, and regulatory compliance. By automating payments based on verified supply chain events, Shell aims to dramatically reduce the time and friction in cross-border trade finance.
+
+This comprehensive architecture document provides a detailed overview of all aspects of the Shell cryptocurrency, from its core blockchain design to its specialized supply chain features. The document includes technical specifications, design principles, implementation details, and the project's roadmap. 

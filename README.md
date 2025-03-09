@@ -31,12 +31,12 @@ For businesses, HandReceipt offers a more affordable and user-friendly alternati
 - Transparent tracking throughout the supply chain
 - Optional fast payment settlement for commercial users
 
-## Shell Token: Powering Retail Supply Chain Finance
+## Shell Token: Powering Supply Chain Finance
 
-Shell is a specialized cryptocurrency designed to revolutionize retail supply chain finance by solving critical pain points in inventory management, payment processing, and working capital optimization. Built on blockchain technology, Shell directly integrates with HandReceipt, a comprehensive supply chain management and warehouse management ERP application, as well as existing enterprise systems to create a seamless bridge between physical inventory movements and financial transactions.
+Shell is a specialized cryptocurrency designed to revolutionize supply chain finance by solving critical pain points in inventory management, payment processing, and working capital optimization. Built on a custom blockchain architecture, Shell directly integrates with HandReceipt, a comprehensive supply chain management solution, as well as existing enterprise systems to create a seamless bridge between physical inventory movements and financial transactions.
 
 ### Core Problem Solved
-The retail supply chain suffers from significant inefficiencies:
+The global supply chain suffers from significant inefficiencies:
 
 - Suppliers wait 60-90 days for payment after shipping goods
 - Limited visibility across multi-tier supply chains
@@ -47,8 +47,9 @@ The retail supply chain suffers from significant inefficiencies:
 ## Technical Architecture
 
 For detailed technical information:
-- See [HandReceipt.md](HandReceipt.md) for more details on the HandReceipt supply chain management solution
-- See [ShellToken.md](ShellToken.md) for comprehensive information on the Shell cryptocurrency
+- See [HANDRECEIPT_PRODUCT.md](HANDRECEIPT_PRODUCT.md) for more details on the HandReceipt supply chain management solution
+- See [ShellToken.md](ShellToken.md) for an overview of the Shell cryptocurrency
+- See [SHELL_TECHNICAL.md](SHELL_TECHNICAL.md) for comprehensive technical specifications of the Shell cryptocurrency architecture
 
 ## Getting Started
 

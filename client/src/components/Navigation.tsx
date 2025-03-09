@@ -4,34 +4,49 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const Navigation = () => {
   const [location, setLocation] = useLocation();
 
-  // Define the navigation order
+  // Define the navigation order with organized categories
   const routes = [
+    // 1. Company Purpose
     { path: "/", name: "COMPANY OVERVIEW" },
     { path: "/founder-vision", name: "FOUNDER & VISION" },
+    
+    // 2. Current Problem
     { path: "/supply-chain-challenges", name: "SUPPLY CHAIN CHALLENGES" },
+    
+    // 3. Solution
     { path: "/solution-overview", name: "SOLUTION OVERVIEW" },
     { path: "/dual-market-strategy", name: "DUAL MARKET STRATEGY" },
+    
+    // 4. Why Now
+    { path: "/why-now", name: "WHY NOW" },
+    
+    // 5. Market Size
     { path: "/market-opportunity", name: "MARKET OPPORTUNITY" },
+    
+    // 6. Competition
     { path: "/competitive-landscape", name: "COMPETITIVE LANDSCAPE" },
+    
+    // 7. Product in more detail
     { path: "/defense-application", name: "DEFENSE APPLICATION" },
     { path: "/commercial-application", name: "COMMERCIAL APPLICATION" },
     { path: "/defense-user-experience", name: "DEFENSE USER EXPERIENCE" },
     { path: "/commercial-solution-showcase", name: "COMMERCIAL SOLUTION SHOWCASE" },
     { path: "/commercial-user-experience", name: "COMMERCIAL USER EXPERIENCE" },
-    { path: "/early-traction", name: "EARLY TRACTION" },
     { path: "/token-economics", name: "TOKEN ECONOMICS" },
     { path: "/shell-token-architecture", name: "SHELL TOKEN ARCHITECTURE" },
+    
+    // 8. Business Model
+    { path: "/early-traction", name: "EARLY TRACTION" },
     { path: "/business-model", name: "BUSINESS MODEL" },
     { path: "/go-to-market-strategy", name: "GO TO MARKET STRATEGY" },
+    
+    // 9. Financials
     { path: "/financial-projections", name: "FINANCIAL PROJECTIONS" },
     { path: "/development-progress", name: "DEVELOPMENT PROGRESS" },
     { path: "/roadmap", name: "ROADMAP" },
-    { path: "/call-to-action", name: "CALL TO ACTION" },
     
-    // VC-styled slides
-    { path: "/vc-investing-circle", name: "VC INVESTING CIRCLE" },
-    { path: "/vc-industry-sectors", name: "INDUSTRY SECTORS" },
-    { path: "/vc-fund-announcement", name: "FUND ANNOUNCEMENT" }
+    // 10. Closing
+    { path: "/call-to-action", name: "CALL TO ACTION" }
   ];
 
   // Find current index

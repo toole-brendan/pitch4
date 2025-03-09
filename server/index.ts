@@ -56,14 +56,30 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client
-  const port = 5000;
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
-  });
+  // Use dynamic port finding, starting with preferred port
+  const preferredPort = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+  
+  // Try to start the server on the preferred port
+  try {
+    server.listen({
+      port: preferredPort,
+      host: 'localhost', // Changed from 0.0.0.0 to localhost
+    }, () => {
+      const address = server.address();
+      const port = typeof address === 'object' && address ? address.port : preferredPort;
+      log(`Server running at http://localhost:${port}`);
+    });
+  } catch (error) {
+    console.error('Failed to start server on preferred port, trying alternative port');
+    
+    // If the preferred port fails, let the OS assign a port
+    server.listen({
+      port: 0, // Let the OS assign a port
+      host: 'localhost',
+    }, () => {
+      const address = server.address();
+      const port = typeof address === 'object' && address ? address.port : 0;
+      log(`Server running at http://localhost:${port}`);
+    });
+  }
 })();

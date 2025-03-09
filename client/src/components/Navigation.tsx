@@ -4,46 +4,29 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const Navigation = () => {
   const [location, setLocation] = useLocation();
 
-  // Define the navigation order with organized categories
+  // Define the navigation order with the exact specified order
   const routes = [
-    // 1. Company Purpose
+    // Main Presentation (16 slides)
     { path: "/", name: "COMPANY OVERVIEW" },
-    { path: "/founder-vision", name: "FOUNDER & VISION" },
     { path: "/founder-background", name: "FOUNDER BACKGROUND" },
-    
-    // 2. Current Problem
     { path: "/supply-chain-challenges", name: "SUPPLY CHAIN CHALLENGES" },
-    
-    // 3. Solution
     { path: "/solution-overview", name: "SOLUTION OVERVIEW" },
     { path: "/dual-market-strategy", name: "DUAL MARKET STRATEGY" },
-    
-    // 4. Why Now
     { path: "/why-now", name: "WHY NOW" },
-    
-    // 5. Market Size
     { path: "/market-opportunity", name: "MARKET OPPORTUNITY" },
-    
-    // 6. Competition
     { path: "/competitive-landscape", name: "COMPETITIVE LANDSCAPE" },
-    
-    // 7. Product in more detail
     { path: "/product-features", name: "PRODUCT FEATURES" },
     { path: "/user-experience", name: "USER EXPERIENCE" },
-    
-    // 8. Business Model
     { path: "/business-model", name: "BUSINESS MODEL" },
     { path: "/go-to-market-strategy", name: "GO TO MARKET STRATEGY" },
-    { path: "/operational-costs", name: "OPERATIONAL COSTS" },
-    
-    // 9. Financials
     { path: "/financial-projections", name: "FINANCIAL PROJECTIONS" },
+    { path: "/operational-costs", name: "OPERATIONAL COSTS" },
     { path: "/funding-request", name: "FUNDING REQUEST" },
     { path: "/team-and-roadmap", name: "TEAM & ROADMAP" },
     
-    // Appendix
-    { path: "/token-economics", name: "TOKEN ECONOMICS (APPENDIX)" },
-    { path: "/shell-token-architecture", name: "SHELL TOKEN ARCHITECTURE (APPENDIX)" }
+    // Appendix (2 slides)
+    { path: "/shell-token-architecture", name: "SHELL TOKEN ARCHITECTURE (APPENDIX)" },
+    { path: "/token-economics", name: "TOKEN ECONOMICS (APPENDIX)" }
   ];
 
   // Find current index
